@@ -19,8 +19,7 @@ result = client.request_access_token(
 print(result)
 client.set_access_token(result.access_token, result.expires_in)
 
-for i in range(96, 100):
-  with open('weibo_data/{}.txt'.format(i), 'r', encoding='utf-8') as file:
+   with open('weibo_data/{}.txt'.format(i), 'r', encoding='utf-8') as file:
     try:
       mid = json.loads(file.readline())['mid']
     except:
