@@ -8,8 +8,8 @@ keys = ['4278710059', '152557326', '646317177', '2507409448', '1006844052', '405
 secrets = ['9065fb6f674b1d1203afb99f8b5c0156', '6945fe41a4796de948ab2174a403812c', '81aa30fe112ed9bebed31b5130b3e2d1', 
   '5e9e0c40e9219b83442bedaaaa4d2a5c', 'd58e7f4aa8aa8ccd5fa231d118cc94df', 'b138a3ec2d48ea1416da1e80c8e36614', '6ad2cee33ca07c5f74574d06f21ede2c',
   '906110cba1b9b0af5d1705dabc13e5b9', '59d41e7f9ceb96a944d75e17826f1053', '1d45d42c21f8e94777d506d83f22464c']
-APP_KEY = keys[2]
-APP_SECRET = secrets[2]
+APP_KEY = keys[9]
+APP_SECRET = secrets[9]
 REDIRECT_URL = 'http://api.weibo.com/oauth2/default.html'
 client = sinaweibopy3.APIClient(app_key=APP_KEY, app_secret=APP_SECRET, redirect_uri=REDIRECT_URL)
 url = client.get_authorize_url()
@@ -19,7 +19,7 @@ result = client.request_access_token(
 print(result)
 client.set_access_token(result.access_token, result.expires_in)
 
-for i in range(96, 100):
+for i in range(165, 166):
   with open('weibo_data/{}.txt'.format(i), 'r', encoding='utf-8') as file:
     try:
       mid = json.loads(file.readline())['mid']
